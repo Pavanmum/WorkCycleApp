@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1048707622084",
+    "project_id": "login-page-75e20",
+    "storage_bucket": "login-page-75e20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1048707622084:android:f87daf6e3f109f8321d591",
+        "android_client_info": {
+          "package_name": "com.example.lofginpage"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1048707622084-doonbqeq8d14k7qgu34v0aq22tfldbof.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBEPmTabCk_jEaMDvJL5cJS8H74SAPqgTE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1048707622084-doonbqeq8d14k7qgu34v0aq22tfldbof.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
