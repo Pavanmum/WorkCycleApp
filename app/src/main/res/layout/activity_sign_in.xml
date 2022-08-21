@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/images"
-    android:foregroundTint="@color/purple_500"
+    android:background="@drawable/rbg"
+    android:foregroundTint="#F81010"
     tools:context=".sign_in">
 
     <TextView
@@ -83,7 +83,7 @@
         android:backgroundTint="@color/white"
         android:ems="10"
         android:hint="Password"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:padding="10dp"
         android:textColor="#fff"
         android:textColorHint="#D8D4D4"
@@ -102,7 +102,7 @@
         android:backgroundTint="@color/white"
         android:ems="10"
         android:hint="Confrim password"
-        android:inputType="textPersonName"
+        android:inputType="textPassword"
         android:padding="10dp"
         android:textColor="#fff"
         android:textColorHint="#D8D4D4"

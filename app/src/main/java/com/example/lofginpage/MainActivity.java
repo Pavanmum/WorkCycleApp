@@ -4,10 +4,15 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -25,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
     Button mLoginbutton;
     TextView mCreateBtn;
     ProgressBar progressBar;
+    boolean passwordVisible;
+
+    SharedPreferences sharedPreferences;
 
     FirebaseAuth fAuth;
 
@@ -42,6 +50,30 @@ public class MainActivity extends AppCompatActivity {
         mCreateBtn = findViewById(R.id.createtxt);
 
         fAuth = FirebaseAuth.getInstance();
+
+        mpassword.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                final int Right = 2;
+                if(motionEvent.getAction()==MotionEvent.ACTION_UP){
+                    if(motionEvent.getRawX()>=mpassword.getRight()-mpassword.getCompoundDrawables()[Right].getBounds().width()){
+                        int selection=mpassword.getSelectionEnd();
+                        if(passwordVisible){
+                            mpassword.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.pass,0);
+                            mpassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                            passwordVisible=false;
+                        }else {
+                            mpassword.setCompoundDrawablesRelativeWithIntrinsicBounds(0,0,R.drawable.showpassword,0);
+                            mpassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                            passwordVisible=true;
+                        }
+                        mpassword.setSelection(selection);
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
 
         mCreateBtn.setOnClickListener(new View.OnClickListener() {
             @Override

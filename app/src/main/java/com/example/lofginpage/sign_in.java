@@ -81,10 +81,6 @@ public class sign_in extends AppCompatActivity {
                 fAuth  = FirebaseAuth.getInstance();
                 fstore = FirebaseFirestore.getInstance();
 
-                if(fAuth.getCurrentUser()!=null){
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                    finish();
-                }
 
 
                 if (TextUtils.isEmpty(fullname)) {
