@@ -69,7 +69,7 @@ public class HomeFragment extends Fragment {
     }
     public void logout(View view) {
         mfirebaseAuth.signOut();
-        intent b = new Intent(HomeFragment.this, MainActivity.class);
+        Intent b = new Intent(getActivity(),MainActivity.class);
         startActivity(b);
     }
 

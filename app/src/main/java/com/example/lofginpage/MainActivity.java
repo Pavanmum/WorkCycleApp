@@ -139,8 +139,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void autosigned() {
         if(fAuth.getCurrentUser()!=null){
-            Intent a = new Intent(MainActivity.this,Dashboard.class);
-            startActivity(a);
+            Intent i = new Intent(MainActivity.this,Dashboard.class);
+            startActivity(i);
         }
     }
 }

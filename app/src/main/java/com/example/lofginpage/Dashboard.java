@@ -1,6 +1,8 @@
 package com.example.lofginpage;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 
@@ -8,6 +10,7 @@ import com.example.lofginpage.ui.home.HomeFragment;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 
+import androidx.annotation.NonNull;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -16,6 +19,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.lofginpage.databinding.ActivityDashboardBinding;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Dashboard extends AppCompatActivity {
 
@@ -30,7 +34,6 @@ public class Dashboard extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarDashboard.toolbar);
-      //  getSupportFragmentManager().beginTransaction().add(R.id.details,new HomeFragment()).commit();
         binding.appBarDashboard.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -56,6 +59,22 @@ public class Dashboard extends AppCompatActivity {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.dashboard, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.logot:
+                doLogoutUser();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void doLogoutUser() {
+        FirebaseAuth.getInstance().signOut();
+        Intent i = new Intent(Dashboard.this,MainActivity.class);
+        startActivity(i);
     }
 
     @Override
