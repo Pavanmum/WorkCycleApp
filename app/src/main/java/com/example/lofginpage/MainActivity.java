@@ -51,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
 
         fAuth = FirebaseAuth.getInstance();
 
+        autosigned();
+
         mpassword.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
@@ -113,21 +115,32 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful())
                         {
-                            Toast.makeText(getApplicationContext(), "Log In Successful", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(getApplicationContext(),Dashboard.class));
+//
+                          Toast.makeText(getApplicationContext(), "Log In Successful", Toast.LENGTH_SHORT).show();
+                            Intent i = new Intent(getApplicationContext(),Dashboard.class);
+                            startActivity(i);
 
-                        }
-                        else
+                        }else
                         {
 
                             Toast.makeText(getApplicationContext(), "Error" + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.GONE);
+
                         }
                     }
+
+//                    SimpleLogin(com.firebase.client.Firebase ref, android.content.Context context)
                 });
             }
         });
 
 
+    }
+
+    private void autosigned() {
+        if(fAuth.getCurrentUser()!=null){
+            Intent a = new Intent(MainActivity.this,Dashboard.class);
+            startActivity(a);
+        }
     }
 }

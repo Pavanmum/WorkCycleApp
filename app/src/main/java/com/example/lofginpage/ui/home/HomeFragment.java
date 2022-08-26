@@ -1,10 +1,14 @@
 package com.example.lofginpage.ui.home;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -12,35 +16,74 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.lofginpage.Adminlog;
+import com.example.lofginpage.Eventcreatepage;
+import com.example.lofginpage.MainActivity;
 import com.example.lofginpage.R;
 import com.example.lofginpage.databinding.FragmentHomeBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.storage.FirebaseStorage;
+
+import org.w3c.dom.Text;
 
 public class HomeFragment extends Fragment {
+    private FirebaseAuth mfirebaseAuth;
 
-    private HomeViewModel homeViewModel;
-    private FragmentHomeBinding binding;
+
+    ViewFlipper view;
+    Activity context;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        super.onCreate(savedInstanceState);
+        mfirebaseAuth = FirebaseAuth.getInstance();
+        context = getActivity();
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        View root = inflater.inflate(R.layout.fragment_home, container, false);
+
+        int imgarr[]={R.drawable.facebook,R.drawable.google,R.drawable.twitter};
+        view = root.findViewById(R.id.viewflipper);
+
+        for(int i=0;i<imgarr.length;i++){
+            showImage(imgarr[i]);
+        }
         return root;
+
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
+    public void showImage(int img){
+        ImageView imageView = new ImageView(this.context);
+        imageView.setBackgroundResource(img);
+
+        view.addView(imageView);
+        view.setFlipInterval(2000);
+        view.setAutoStart(true);
+
+        view.setInAnimation(context,android.R.anim.slide_in_left);
+        view.setOutAnimation(context,android.R.anim.slide_out_right);
+
+
+
+    }
+    public void logout(View view) {
+        mfirebaseAuth.signOut();
+        intent b = new Intent(HomeFragment.this, MainActivity.class);
+        startActivity(b);
+    }
+
+    public void onStart() {
+        super.onStart();
+        TextView Admin = (TextView) context.findViewById(R.id.Admin);
+        Admin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, Adminlog.class);
+                startActivity(intent);
+            }
+        });
+
+
     }
 }

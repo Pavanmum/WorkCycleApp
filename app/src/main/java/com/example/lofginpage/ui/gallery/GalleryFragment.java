@@ -17,6 +17,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.lofginpage.Eventcreatepage;
 import com.example.lofginpage.R;
 import com.example.lofginpage.SplashScreen;
 import com.example.lofginpage.databinding.FragmentGalleryBinding;
@@ -25,6 +26,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class GalleryFragment extends Fragment {
     private FirebaseAuth mfirebaseAuth;
+
 
     Activity context;
 
@@ -49,7 +51,7 @@ public class GalleryFragment extends Fragment {
         event.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, SplashScreen.class);
+                Intent intent = new Intent(context, Eventcreatepage.class);
                 startActivity(intent);
             }
         });

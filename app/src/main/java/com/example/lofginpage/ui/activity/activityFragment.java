@@ -14,28 +14,18 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.lofginpage.R;
 import com.example.lofginpage.databinding.FragmentHomeBinding;
-import com.example.lofginpage.ui.home.HomeViewModel;
 
 public class activityFragment extends Fragment {
 
-    private com.example.lofginpage.ui.activity.ActivityViewModel ActivityViewModel;
-    private FragmentHomeBinding binding;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        ActivityViewModel =
-                new ViewModelProvider(this).get(ActivityViewModel.class);
+        super.onCreate(savedInstanceState);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+        View root =   inflater.inflate(R.layout.fragment_gallery, container, false);
 
-        final TextView textView = binding.textHome;
-        ActivityViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
         return root;
     }
 
