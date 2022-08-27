@@ -66,9 +66,9 @@ public class sign_in extends AppCompatActivity {
         });
 
         mRegisterBtn.setOnClickListener(new View.OnClickListener() {
+            String userID;
             private FirebaseAuth fAuth;
             private FirebaseFirestore fstore;
-            String userID;
 
             @Override
             public void onClick(View view) {
@@ -78,9 +78,8 @@ public class sign_in extends AppCompatActivity {
                 String fullname = mFullname.getText().toString().trim();
                 String Phone = mPhone.getText().toString().trim();
 
-                fAuth  = FirebaseAuth.getInstance();
+                fAuth = FirebaseAuth.getInstance();
                 fstore = FirebaseFirestore.getInstance();
-
 
 
                 if (TextUtils.isEmpty(fullname)) {

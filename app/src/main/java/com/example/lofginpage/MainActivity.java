@@ -141,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
         if(fAuth.getCurrentUser()!=null){
             Intent i = new Intent(MainActivity.this,Dashboard.class);
             startActivity(i);
+            finish();
         }
     }
 }
