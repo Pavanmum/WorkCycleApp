@@ -19,16 +19,11 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Eventcreatepage extends AppCompatActivity {
 
-    private EditText dname, dwork, ddays,dlocation,dmoney,dperson;
-    private Button dbtn,dbtnreset;
-
     FirebaseDatabase firebaseDatabase;
-
-
     DatabaseReference databaseReference;
-
-
     Event eventinfo;
+    private EditText dname, dwork, ddays, dlocation, dmoney, dperson;
+    private Button dbtn, dbtnreset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +36,6 @@ public class Eventcreatepage extends AppCompatActivity {
         dlocation = findViewById(R.id.location);
         dmoney = findViewById(R.id.money);
         dperson = findViewById(R.id.person);
-
 
 
         firebaseDatabase = FirebaseDatabase.getInstance();
@@ -69,7 +63,12 @@ public class Eventcreatepage extends AppCompatActivity {
         dbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                checkValidation();
 
+
+            }
+
+            private void checkValidation() {
 
                 String ename = dname.getText().toString();
                 String ework = dwork.getText().toString();
@@ -78,20 +77,34 @@ public class Eventcreatepage extends AppCompatActivity {
                 String erupees = dmoney.getText().toString();
                 String elocation = dlocation.getText().toString();
 
+                if(ename.isEmpty()){
+                    dname.setError("Enter a Event name");
+                    dname.requestFocus();
+                }
+                else if(ework.isEmpty()){
+                    dwork.setError("Enter a work");
+                    dwork.requestFocus();
+                }  else if(eperson.isEmpty()){
+                    dperson.setError("Enter a number");
+                    dname.requestFocus();
+                }  else if(edays.isEmpty()){
+                    ddays.setError("Enter a days");
+                    ddays.requestFocus();
+                }  else if(erupees.isEmpty()){
+                    dmoney.setError("Enter a money");
+                    dmoney.requestFocus();
+                }  else if(elocation.isEmpty()){
+                    dlocation.setError("location");
+                    dlocation.requestFocus();
+                }else {
 
-                if (TextUtils.isEmpty(ename) && TextUtils.isEmpty(ework) && TextUtils.isEmpty(eperson) && TextUtils.isEmpty(erupees)
-               && TextUtils.isEmpty(elocation)&& TextUtils.isEmpty(edays) ) {
-
-                    Toast.makeText(Eventcreatepage.this, "Please add some data.", Toast.LENGTH_SHORT).show();
-                } else {
-
-                    addDatatoFirebase(ename,ework,eperson,erupees,elocation,edays );
+                    addDatatoFirebase(ename, ework, eperson, erupees, elocation, edays);
                 }
             }
         });
     }
 
-    private void addDatatoFirebase(String ename, String ework, String eperson,String edays, String elocation, String erupees) {
+    private void addDatatoFirebase(String ename, String ework, String eperson, String edays, String elocation, String erupees) {
         eventinfo.setEname(ename);
         eventinfo.setEwork(ework);
         eventinfo.setEperson(eperson);
