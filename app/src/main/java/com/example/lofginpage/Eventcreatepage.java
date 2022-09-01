@@ -17,12 +17,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class Eventcreatepage extends AppCompatActivity {
 
-//    FirebaseDatabase firebaseDatabase;
+    FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     Event eventinfo;
     private EditText dname, dwork, ddays, dlocation, dmoney, dperson;
@@ -41,7 +38,10 @@ public class Eventcreatepage extends AppCompatActivity {
         dperson = findViewById(R.id.person);
 
 
+        firebaseDatabase = FirebaseDatabase.getInstance();
 
+
+        databaseReference = firebaseDatabase.getReference("Event");
 
         eventinfo = new Event();
 
@@ -63,13 +63,19 @@ public class Eventcreatepage extends AppCompatActivity {
         dbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                checkValidation();
+
+
+            }
+
+            private void checkValidation() {
+
                 String ename = dname.getText().toString();
                 String ework = dwork.getText().toString();
                 String eperson = dperson.getText().toString();
                 String edays = ddays.getText().toString();
                 String erupees = dmoney.getText().toString();
                 String elocation = dlocation.getText().toString();
-
 
                 if(ename.isEmpty()){
                     dname.setError("Enter a Event name");
@@ -90,25 +96,11 @@ public class Eventcreatepage extends AppCompatActivity {
                 }  else if(elocation.isEmpty()){
                     dlocation.setError("location");
                     dlocation.requestFocus();
-                }
-                else {
+                }else {
 
-                    HashMap<String, Object> m = new HashMap<String, Object>();
-                    m.put("name", dname.getText().toString());
-                    m.put("Work", dwork.getText().toString());
-                    m.put("location", dlocation.getText().toString());
-                    m.put("Money", dmoney.getText().toString());
-                    m.put("Days", ddays.getText().toString());
-                    m.put("Person", dperson.getText().toString());
-
-
-                    FirebaseDatabase.getInstance().getReference().child("Event").push().setValue(m);
-                    Toast.makeText(Eventcreatepage.this, "Created", Toast.LENGTH_SHORT).show();
-
+                    addDatatoFirebase(ename, ework, eperson, erupees, elocation, edays);
                 }
             }
-
-
         });
     }
 
