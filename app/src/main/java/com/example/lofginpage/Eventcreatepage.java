@@ -1,29 +1,27 @@
 package com.example.lofginpage;
 
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.lofginpage.Event;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+
+import java.util.HashMap;
 
 public class Eventcreatepage extends AppCompatActivity {
 
-    FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference;
+    //    FirebaseDatabase firebaseDatabase;
+//    DatabaseReference databaseReference;
     Event eventinfo;
     private EditText dname, dwork, ddays, dlocation, dmoney, dperson;
     private Button dbtn, dbtnreset;
+    DatabaseReference refrence;
+    FirebaseDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +36,11 @@ public class Eventcreatepage extends AppCompatActivity {
         dperson = findViewById(R.id.person);
 
 
-        firebaseDatabase = FirebaseDatabase.getInstance();
+//        firebaseDatabase = FirebaseDatabase.getInstance();
 
-
-        databaseReference = firebaseDatabase.getReference("Event");
+//
+////        databaseReference = firebaseDatabase.getReference("Event");
+//        DatabaseReference.get
 
         eventinfo = new Event();
 
@@ -57,19 +56,13 @@ public class Eventcreatepage extends AppCompatActivity {
                 dmoney.setText("");
                 dperson.setText("");
 
+
             }
         });
 
         dbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                checkValidation();
-
-
-            }
-
-            private void checkValidation() {
-
                 String ename = dname.getText().toString();
                 String ework = dwork.getText().toString();
                 String eperson = dperson.getText().toString();
@@ -96,34 +89,34 @@ public class Eventcreatepage extends AppCompatActivity {
                 }  else if(elocation.isEmpty()){
                     dlocation.setError("location");
                     dlocation.requestFocus();
-                }else {
-
-                    addDatatoFirebase(ename, ework, eperson, erupees, elocation, edays);
                 }
-            }
-        });
-    }
 
-    private void addDatatoFirebase(String ename, String ework, String eperson, String edays, String elocation, String erupees) {
-        eventinfo.setEname(ename);
-        eventinfo.setEwork(ework);
-        eventinfo.setEperson(eperson);
-        eventinfo.setElocation(elocation);
-        eventinfo.setErupees(erupees);
-        eventinfo.setEdays(edays);
+                HashMap<String, Object> event = new HashMap<>();
+                event.put("Name", ename);
+                event.put("Work", ework);
+                event.put("Person", eperson);
+                event.put("Days", edays);
+                event.put("Money", erupees);
+                event.put("Location", elocation);
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                databaseReference.setValue(eventinfo);
 
-                Toast.makeText(Eventcreatepage.this, "Event created", Toast.LENGTH_SHORT).show();
+                db = FirebaseDatabase.getInstance();
+                refrence = db.getReference("Event");
+                refrence.child(ename).setValue(event);
+                Toast.makeText(Eventcreatepage.this, "Created", Toast.LENGTH_SHORT).show();
             }
 
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
 
-                Toast.makeText(Eventcreatepage.this, "Fail to add data " + error, Toast.LENGTH_SHORT).show();
+
+
+            private void addDatatoFirebase(String ename, String ework, String eperson, String edays, String elocation, String erupees) {
+                eventinfo.setName(ename);
+                eventinfo.setWork(ework);
+                eventinfo.setPerson(eperson);
+                eventinfo.setLocation(elocation);
+                eventinfo.setMoney(erupees);
+                eventinfo.setDays(edays);
+
             }
         });
     }

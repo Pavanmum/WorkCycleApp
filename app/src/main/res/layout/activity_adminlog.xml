@@ -5,12 +5,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/rbg"
+    android:background="@drawable/shape"
     tools:context=".ui.gallery.GalleryFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="136dp" />
+        android:layout_height="wrap_content"
+        android:layout_margin="1dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="#2ACA5151"
+            android:textAlignment="center">
+
+
+            <ImageView
+                android:id="@+id/reverse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:padding="15dp"
+                android:src="@drawable/back"
+                android:theme="@style/Animation.Design.BottomSheetDialog" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="73dp" />
 
 
     <LinearLayout
@@ -136,7 +159,7 @@
                     android:background="#ED0E0E" />
 
                 <TextView
-                    android:id="@+id/updatevents"
+                    android:id="@+id/updateevents"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -175,7 +198,7 @@
                     android:background="#ED0E0E" />
 
                 <TextView
-                    android:id="@+id/updatevent"
+                    android:id="@+id/deleteevent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"

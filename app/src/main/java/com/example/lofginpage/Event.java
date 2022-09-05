@@ -2,63 +2,54 @@ package com.example.lofginpage;
 
 public class Event {
 
+    String Name,Location,Person,Work,Days,Money;
 
-    private String ename;
-    private String ework;
-    private String eperson;
-    private String edays;
-    private String erupees;
-    private String elocation;
-
-    public Event() {
+    public String getName() {
+        return Name;
     }
 
-    public String getEname() {
-        return ename;
+    public void setName(String name) {
+        Name = name;
     }
 
-    public void setEname(String ename) {
-        this.ename = ename;
+    public String getLocation() {
+        return Location;
     }
 
-    public String getEwork() {
-        return ework;
+    public void setLocation(String location) {
+        Location = location;
     }
 
-    public void setEwork(String ework) {
-        this.ework = ework;
+    public String getPerson() {
+        return Person;
     }
 
-    public String getEperson() {
-        return eperson;
+    public void setPerson(String person) {
+        Person = person;
     }
 
-    public void setEperson(String eperson) {
-        this.eperson = eperson;
+    public String getWork() {
+        return Work;
     }
 
-    public String getEdays() {
-        return edays;
+    public void setWork(String work) {
+        Work = work;
     }
 
-    public void setEdays(String edays) {
-        this.edays = edays;
+    public String getDays() {
+        return Days;
     }
 
-    public String getErupees() {
-        return erupees;
+    public void setDays(String days) {
+        Days = days;
     }
 
-    public void setErupees(String erupees) {
-        this.erupees = erupees;
+    public String getMoney() {
+        return Money;
     }
 
-    public String getElocation() {
-        return elocation;
-    }
-
-    public void setElocation(String elocation) {
-        this.elocation = elocation;
+    public void setMoney(String money) {
+        Money = money;
     }
 }
 

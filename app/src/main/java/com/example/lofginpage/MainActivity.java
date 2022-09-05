@@ -1,8 +1,5 @@
 package com.example.lofginpage;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -12,11 +9,13 @@ import android.text.method.PasswordTransformationMethod;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -28,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText mEmail,mpassword;
     Button mLoginbutton;
-    TextView mCreateBtn;
+    TextView mCreateBtn,mforget;
     ProgressBar progressBar;
     boolean passwordVisible;
 
@@ -48,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         mLoginbutton = findViewById(R.id.button);
         mCreateBtn = findViewById(R.id.createtxt);
+        mforget = findViewById(R.id.forget);
 
         fAuth = FirebaseAuth.getInstance();
 
@@ -81,6 +81,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),sign_in.class));
+                finish();
+            }
+        });
+
+        mforget.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(),forgetpwd.class));
+                finish();
             }
         });
 
@@ -119,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
                           Toast.makeText(getApplicationContext(), "Log In Successful", Toast.LENGTH_SHORT).show();
                             Intent i = new Intent(getApplicationContext(),Dashboard.class);
                             startActivity(i);
+                            finish();
 
                         }else
                         {

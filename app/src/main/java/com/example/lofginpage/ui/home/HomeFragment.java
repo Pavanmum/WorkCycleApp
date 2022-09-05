@@ -11,23 +11,13 @@ import android.widget.TextView;
 import android.widget.ViewFlipper;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.lofginpage.Adminlog;
-import com.example.lofginpage.Eventcreatepage;
-import com.example.lofginpage.MainActivity;
 import com.example.lofginpage.R;
-import com.example.lofginpage.clientpage;
-import com.example.lofginpage.databinding.FragmentHomeBinding;
-import com.example.lofginpage.eventupdatepage;
-import com.google.android.gms.common.util.ClientLibraryUtils;
+import com.example.lofginpage.SplashScreen;
+import com.example.lofginpage.cilentdash;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.storage.FirebaseStorage;
-
-import org.w3c.dom.Text;
 
 public class HomeFragment extends Fragment {
     ViewFlipper view;
@@ -67,21 +57,18 @@ public class HomeFragment extends Fragment {
 
     }
 
-    public void logout(View view) {
-        mfirebaseAuth.signOut();
-        Intent b = new Intent(getActivity(), MainActivity.class);
-        startActivity(b);
-    }
+
 
     public void onStart() {
         super.onStart();
         TextView Admin = (TextView) context.findViewById(R.id.Admin);
         TextView Client = (TextView) context.findViewById(R.id.Client);
+        TextView About = (TextView) context.findViewById(R.id.about);
 
         Client.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context,clientpage.class);
+                Intent intent = new Intent(context, cilentdash.class);
                 startActivity(intent);
             }
         });
@@ -90,6 +77,15 @@ public class HomeFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(context, Adminlog.class);
                 startActivity(intent);
+
+            }
+        });
+        About.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, SplashScreen.class);
+                startActivity(intent);
+
             }
         });
 
