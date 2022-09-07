@@ -1,292 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/rbg"
     tools:context=".ui.gallery.GalleryFragment">
-    
-    <LinearLayout
+
+    <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
-        android:layout_height="60dp"/>
-
+        android:layout_height="match_parent"
+        />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="151dp"
-        android:layout_margin="5dp"
-        android:gravity="center"
-        android:orientation="horizontal">
+        android:layout_height="200dp"
+        android:background="#2196F3"
+        app:layout_constraintTop_toTopOf="@+id/scrollView2"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-16dp">
 
+        <ImageView
+            android:paddingTop="17dp"
+            android:id="@+id/imageView2"
+            android:layout_width="137dp"
+            android:layout_height="143dp"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/ic_baseline_person_24" />
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/addNotics"
-            android:layout_width="130dp"
-            android:layout_height="150dp"
-            android:layout_margin="10dp"
-            android:elevation="5dp">
+        <LinearLayout
+            android:layout_width="235dp"
+            android:layout_height="126dp"
+            android:layout_marginTop="50dp"
+            android:paddingTop="17dp"
+            android:orientation="vertical">
 
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:text="WELCOME "
+                android:paddingEnd="34dp"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical">
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="205dp"
+                android:layout_height="36dp"
+                android:paddingLeft="10dp"
+                android:paddingEnd="34dp"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                android:textSize="16dp" />
 
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:background="@drawable/circle"
-                    android:src="@drawable/nav_admin" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="10dp"
-                    android:background="#ED0E0E" />
-
-                <TextView
-                    android:id="@+id/logout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:padding="5dp"
-                    android:text="Logout"
-                    android:textColor="@color/blue3"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/Evnt"
-            android:layout_width="130dp"
-            android:layout_height="150dp"
-            android:layout_margin="10dp"
-            android:elevation="5dp">
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:background="@drawable/colorcircle2"
-                    android:src="@drawable/eventicon" />
-
-                <androidx.viewpager.widget.ViewPager
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="10dp"
-                    android:background="#ED0E0E" />
-
-                <TextView
-                    android:id="@+id/Eventcreate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:padding="5dp"
-                    android:text="Create a Event"
-                    android:textColor="@color/orange2"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
+        </LinearLayout>
 
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="221dp"
-        android:layout_margin="5dp"
-        android:gravity="center"
-        android:orientation="horizontal">
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:drawablePadding="30dp"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        app:layout_constraintVertical_bias="0.104" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:drawablePadding="30dp"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.078" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:drawablePadding="30dp"
+        android:gravity="center_vertical"
+        android:paddingStart="10dp"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5"
+        app:layout_constraintVertical_bias="0.085" />
+
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit Profile"
+        android:backgroundTint="@color/teal_200"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8"
+        app:layout_constraintVertical_bias="0.338" />
 
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/ddNotics"
-            android:layout_width="130dp"
-            android:layout_height="150dp"
-            android:layout_margin="10dp"
-            android:elevation="5dp">
 
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:background="@drawable/circle"
-                    android:src="@drawable/nav_admin" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="10dp"
-                    android:background="#ED0E0E" />
-
-                <TextView
-                    android:id="@+id/l"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:padding="5dp"
-                    android:text="Logout"
-                    android:textColor="@color/blue3"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/Event"
-            android:layout_width="130dp"
-            android:layout_height="150dp"
-            android:layout_margin="10dp"
-            android:elevation="5dp">
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:background="@drawable/circle"
-                    android:src="@drawable/nav_admin" />
-
-                <androidx.viewpager.widget.ViewPager
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="10dp"
-                    android:background="#ED0E0E" />
-
-                <TextView
-                    android:id="@+id/create"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:onClick="logout"
-                    android:padding="5dp"
-                    android:text="Create a Event"
-                    android:textColor="@color/blue3"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="252dp"
-        android:layout_margin="5dp"
-        android:layout_marginTop="@dimen/activity_horizontal_margin"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/addNtics"
-            android:layout_width="130dp"
-            android:layout_height="150dp"
-            android:layout_margin="10dp"
-            android:elevation="5dp">
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:background="@drawable/circle"
-                    android:src="@drawable/nav_admin" />
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="10dp"
-                    android:background="#ED0E0E" />
-
-                <TextView
-                    android:id="@+id/kam"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:padding="5dp"
-                    android:text="Logout"
-                    android:textColor="@color/blue3"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/Evt"
-            android:layout_width="130dp"
-            android:layout_height="150dp"
-            android:layout_margin="10dp"
-            android:elevation="5dp">
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
-                    android:background="@drawable/circle"
-                    android:src="@drawable/nav_admin" />
-
-                <androidx.viewpager.widget.ViewPager
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="10dp"
-                    android:background="#ED0E0E" />
-
-                <TextView
-                    android:id="@+id/Evecreate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:padding="5dp"
-                    android:text="Create a Event"
-                    android:textColor="@color/blue3"
-                    android:textStyle="bold" />
-
-            </LinearLayout>
-
-        </com.google.android.material.card.MaterialCardView>
-
-
-    </LinearLayout>
-
-</LinearLayout>
-
+</androidx.constraintlayout.widget.ConstraintLayout>

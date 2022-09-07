@@ -88,8 +88,10 @@ public class MainActivity extends AppCompatActivity {
         mforget.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getApplicationContext(),forgetpwd.class));
-                finish();
+              Intent i = new Intent(getApplicationContext(),forgot.class);
+              startActivity(i);
+              finish();
+
             }
         });
 
