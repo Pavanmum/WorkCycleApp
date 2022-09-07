@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -34,6 +35,7 @@ public class sign_in extends AppCompatActivity {
     Button mRegisterBtn;
     TextView mLoginBtn;
     ProgressBar progressBar;
+    ImageView back;
 
 
     @Override
@@ -49,11 +51,21 @@ public class sign_in extends AppCompatActivity {
         mRegisterBtn = findViewById(R.id.btn1);
         mLoginBtn = findViewById(R.id.createtext);
         progressBar = findViewById(R.id.progressBar);
+        back = findViewById(R.id.backe);
 
 
         FirebaseFirestore fstore;
         String userID;
         FirebaseAuth fAuth;
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
 
 
         mLoginBtn.setOnClickListener(new View.OnClickListener() {
