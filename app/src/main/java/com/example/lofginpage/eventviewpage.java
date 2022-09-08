@@ -1,5 +1,6 @@
 package com.example.lofginpage;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -21,12 +22,20 @@ public class eventviewpage extends AppCompatActivity {
     RecyclerView recyclerView;
     eventadapter adapter;
     ArrayList<Event> list;
+    ProgressDialog progressDialog;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_eventviewpage);
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setCancelable(false);
+        progressDialog.setMessage("Please Wait.....");
+        progressDialog.show();
+
+
 
         recyclerView = findViewById(R.id.userlist);
 
@@ -48,6 +57,8 @@ public class eventviewpage extends AppCompatActivity {
                     list.add(data);
                 }
                 adapter.notifyDataSetChanged();
+                if (progressDialog.isShowing())
+                    progressDialog.dismiss();
             }
 
             @Override

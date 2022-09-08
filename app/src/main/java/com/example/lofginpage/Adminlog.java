@@ -48,7 +48,7 @@ public class Adminlog extends AppCompatActivity {
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Adminlog.this,clientdatas.class));
+                startActivity(new Intent(Adminlog.this,clientdetails.class));
             }
         });
         t1.setOnClickListener(new View.OnClickListener() {
