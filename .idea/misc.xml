@@ -22,6 +22,7 @@
         <entry key="..\:/Users/msi/AndroidStudioProjects/Lofginpage/app/src/main/res/layout/nav_header_dashboard.xml" value="0.2" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/Lofginpage/app/src/main/res/menu/activity_main_drawer.xml" value="0.4" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/Lofginpage/app/src/main/res/menu/dashboard.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/drawable/admin.xml" value="0.2484375" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/drawable/circle.xml" value="0.2484375" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/drawable/colorcircle2.xml" value="0.2484375" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/drawable/create.xml" value="0.2484375" />
@@ -34,7 +35,7 @@
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/font/antic.xml" value="0.2625" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/font/athiti_extralight.xml" value="0.1" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/font/diplomata_sc.xml" value="0.2625" />
-        <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/activity_adminlog.xml" value="0.21822916666666667" />
+        <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/activity_adminlog.xml" value="0.264" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/activity_cilentdash.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/activity_client.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/activity_clientdata.xml" value="0.264" />
@@ -52,7 +53,7 @@
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/activity_forgetpwd.xml" value="0.264" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/activity_forgot.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/activity_fragment.xml" value="0.2" />
-        <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/activity_main.xml" value="0.72" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/activity_pedit.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/activity_sign_in.xml" value="0.264" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.2" />
@@ -66,7 +67,7 @@
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/detailsc.xml" value="0.4" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/eventlayout.xml" value="0.2" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/fragment_gallery.xml" value="0.264" />
-        <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/fragment_slideshow.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/nav_header_dashboard.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/no_data_found.xml" value="0.23229166666666667" />

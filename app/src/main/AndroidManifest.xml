@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.lofginpage">
+    package="com.example.WorkCycle">
 
     <application
         android:allowBackup="true"
@@ -10,42 +10,42 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LofginPage">
         <activity
-            android:name=".clientdetails"
+            android:name="com.example.WorkCycle.clientdetails"
             android:exported="false" />
         <activity
-            android:name=".forgot"
+            android:name="com.example.WorkCycle.forgot"
             android:exported="false" />
         <activity
-            android:name=".pedit"
+            android:name="com.example.WorkCycle.pedit"
             android:exported="false" />
         <activity
-            android:name=".clientdata"
+            android:name="com.example.WorkCycle.clientdata"
             android:exported="false" />
         <activity
-            android:name=".UpdateData"
+            android:name="com.example.WorkCycle.UpdateData"
             android:exported="false" />
         <activity
-            android:name=".deletepage"
+            android:name="com.example.WorkCycle.deletepage"
             android:exported="false" />
         <activity
-            android:name=".eventviewpage"
+            android:name="com.example.WorkCycle.eventviewpage"
             android:exported="false" />
         <activity
-            android:name=".cilentdash"
+            android:name="com.example.WorkCycle.cilentdash"
             android:exported="false" />
         <activity
-            android:name=".Adminlog"
+            android:name="com.example.WorkCycle.Adminlog"
             android:exported="false" />
         <activity
-            android:name=".Eventcreatepage"
+            android:name="com.example.WorkCycle.Eventcreatepage"
             android:exported="false" />
         <activity
-            android:name=".Dashboard"
+            android:name="com.example.WorkCycle.Dashboard"
             android:exported="false"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/Theme.LofginPage.NoActionBar" />
         <activity
-            android:name=".SplashScreen"
+            android:name="com.example.WorkCycle.SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -54,11 +54,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".sign_in"
+            android:name="com.example.WorkCycle.sign_in"
             android:exported="false"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="com.example.WorkCycle.MainActivity" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.WorkCycle.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

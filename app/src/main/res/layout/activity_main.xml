@@ -70,16 +70,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginEnd="50dp"
+        android:backgroundTint="@color/teal_200"
         android:padding="10dp"
         android:text="Submit"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pwd"
-        app:layout_constraintVertical_bias="0.148" />
+        app:layout_constraintVertical_bias="0.412" />
 
     <TextView
         android:id="@+id/textView3"
@@ -95,54 +96,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.19" />
-
-    <ImageView
-        android:id="@+id/g1"
-        android:layout_width="64dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="1dp"
-        android:backgroundTint="@color/blue1"
-        android:elevation="35dp"
-        android:src="@drawable/google"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.515"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.494" />
-
-    <ImageView
-        android:id="@+id/facebook"
-        android:layout_width="64dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="1dp"
-        android:backgroundTint="@color/blue3"
-        android:elevation="35dp"
-        android:src="@drawable/facebook"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.282"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.494" />
-
-    <ImageView
-        android:id="@+id/google"
-        android:layout_width="64dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginEnd="50dp"
-        android:backgroundTint="@color/blue2"
-        android:elevation="35dp"
-        android:src="@drawable/twitter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintStart_toEndOf="@+id/g1"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.494" />
 
     <TextView
         android:id="@+id/createtxt"
@@ -162,11 +115,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.438"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/createtxt"
-        app:layout_constraintVertical_bias="0.26" />
+        app:layout_constraintTop_toBottomOf="@+id/mail"
+        app:layout_constraintVertical_bias="0.948" />
 
     <ImageView
         android:id="@+id/iv_circle"
@@ -203,6 +157,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="171dp"
+        android:text="Admin"
+        app:layout_constraintEnd_toStartOf="@+id/forget"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pwd" />
+
+    <Switch
+        android:id="@+id/switch3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="314dp"
+        android:text="Client"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
