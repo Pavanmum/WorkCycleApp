@@ -10,42 +10,42 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LofginPage">
         <activity
-            android:name="com.example.WorkCycle.clientdetails"
+            android:name=".clientdetails"
             android:exported="false" />
         <activity
-            android:name="com.example.WorkCycle.forgot"
+            android:name=".forgot"
             android:exported="false" />
         <activity
-            android:name="com.example.WorkCycle.pedit"
+            android:name=".pedit"
             android:exported="false" />
         <activity
-            android:name="com.example.WorkCycle.clientdata"
+            android:name=".clientdata"
             android:exported="false" />
         <activity
-            android:name="com.example.WorkCycle.UpdateData"
+            android:name=".UpdateData"
             android:exported="false" />
         <activity
-            android:name="com.example.WorkCycle.deletepage"
+            android:name=".deletepage"
             android:exported="false" />
         <activity
-            android:name="com.example.WorkCycle.eventviewpage"
+            android:name=".eventviewpage"
             android:exported="false" />
         <activity
-            android:name="com.example.WorkCycle.cilentdash"
+            android:name=".cilentdash"
             android:exported="false" />
         <activity
-            android:name="com.example.WorkCycle.Adminlog"
+            android:name=".Adminlog"
             android:exported="false" />
         <activity
-            android:name="com.example.WorkCycle.Eventcreatepage"
+            android:name=".Eventcreatepage"
             android:exported="false" />
         <activity
-            android:name="com.example.WorkCycle.Dashboard"
+            android:name=".Dashboard"
             android:exported="false"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/Theme.LofginPage.NoActionBar" />
         <activity
-            android:name="com.example.WorkCycle.SplashScreen"
+            android:name=".SplashScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -54,11 +54,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.WorkCycle.sign_in"
+            android:name=".sign_in"
             android:exported="false"
-            android:parentActivityName="com.example.WorkCycle.MainActivity" />
+            android:parentActivityName=".MainActivity" />
         <activity
-            android:name="com.example.WorkCycle.MainActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

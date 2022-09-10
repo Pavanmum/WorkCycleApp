@@ -92,6 +92,8 @@ public class clientdata extends AppCompatActivity {
                     phone.setError("Enter valid no");
                     return;
                 }
+
+
                 Map<String,Object> clients = new HashMap<>();
                 clients.put("Name",Names);
                 clients.put("Age",Age);
@@ -99,6 +101,7 @@ public class clientdata extends AppCompatActivity {
                 clients.put("qualification",Qua);
                 clients.put("Email",Mail);
                 clients.put("Mobile",Phone);
+
 
                 db.collection("Client")
                         .add(clients)
