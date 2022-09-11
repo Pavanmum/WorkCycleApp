@@ -31,6 +31,14 @@ public class cilentdash extends AppCompatActivity {
             }
         });
 
+        t2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),Acceptd.class);
+                startActivity(intent);
+            }
+        });
+
         t3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

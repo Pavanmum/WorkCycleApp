@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LofginPage">
         <activity
+            android:name=".Acceptd"
+            android:exported="false" />
+        <activity
             android:name=".clientdetails"
             android:exported="false" />
         <activity

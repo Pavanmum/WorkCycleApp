@@ -80,6 +80,7 @@ public class detailadapter extends RecyclerView.Adapter<detailadapter.MyViewhold
                 eAge.setText(user.getAge());
                 emobile.setText(user.getMobile());
                 EExp.setText(user.getExperience());
+                etMail.setText(user.getEmail());
 
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -132,6 +133,7 @@ public class detailadapter extends RecyclerView.Adapter<detailadapter.MyViewhold
                             clients.put("qualification",Qua);
                             clients.put("Email",Mail);
                             clients.put("Mobile",note);
+
 //
 
                             fStore.collection("jobers")

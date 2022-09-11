@@ -36,6 +36,7 @@
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/font/athiti_extralight.xml" value="0.1" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/font/diplomata_sc.xml" value="0.2625" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/activity_acceptclient.xml" value="0.23229166666666667" />
+        <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/activity_acceptd.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/activity_adminlog.xml" value="0.264" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/activity_cilentdash.xml" value="0.23229166666666667" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/activity_client.xml" value="0.23229166666666667" />
@@ -63,10 +64,11 @@
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/admin_job_application_accept_file.xml" value="0.2" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/adminview.xml" value="0.17980072463768115" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/app_bar_dashboard.xml" value="0.264" />
+        <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/clientd.xml" value="0.4404432132963989" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/content_dashboard.xml" value="0.25" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/deleteevent.xml" value="0.21822916666666667" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/detailsc.xml" value="0.4" />
-        <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/dialog.xml" value="0.15217391304347827" />
+        <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/dialog.xml" value="0.2" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/eventlayout.xml" value="0.2" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/fragment_gallery.xml" value="0.264" />
         <entry key="..\:/Users/msi/AndroidStudioProjects/WorkCycleApp/app/src/main/res/layout/fragment_home.xml" value="0.2" />
