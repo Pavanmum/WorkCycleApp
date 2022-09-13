@@ -2,12 +2,14 @@ package com.example.WorkCycle;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -18,8 +20,6 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -97,34 +97,13 @@ public class detailadapter extends RecyclerView.Adapter<detailadapter.MyViewhold
                             String Qua = EExp.getText().toString();
                             String Mail = emobile.getText().toString();
                             String  note= notes.getText().toString();
-//                            if (TextUtils.isEmpty(Names)) {
-//                                Names.setError("Enter a Name");
-//                                return;
-//                            }
-//                            if (TextUtils.isEmpty(Age)) {
-//                                age.setError("Age is Required");
-//                                return;
-//                            }
-//
-//                            if (TextUtils.isEmpty(expe)) {
-//                                exp.setError("Enter Experience");
-//                                return;
-//                            }
-//
-//                            if (TextUtils.isEmpty(Qua)) {
-//                                qua.setError("Enter Qualification");
-//                                return;
-//                            }
-//                            if (TextUtils.isEmpty(Mail)) {
-//                                mail.setError("Enter Email");
-//                                return;
-//                            }
-//
-//                            if (Phone.length() != 10) {
-//                                phone.setError("Enter valid no");
-//                                return;
-//                            }
 
+
+
+                            String userId = fAuth.getCurrentUser().getUid();
+
+                            String id = fStore.collection("user").document(userId).collection("Jobs").document().getId();
+                            DocumentReference df = fStore.collection("user").document(userId).collection("Jobs").document(id);
 
                             Map<String,Object> clients = new HashMap<>();
                             clients.put("Name",Names);
@@ -134,24 +113,23 @@ public class detailadapter extends RecyclerView.Adapter<detailadapter.MyViewhold
                             clients.put("Email",Mail);
                             clients.put("Mobile",note);
 
-//
-
-                            fStore.collection("jobers")
-                                    .add(clients)
-                                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                                        @Override
-                                        public void onSuccess(DocumentReference documentReference) {
-//                                            Toast.makeText(holder.detailadapter.this, "Successful", Toast.LENGTH_SHORT).show();
-                                        }
-                                    }).addOnFailureListener(new OnFailureListener() {
+                            df.set(clients).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
-                                public void onFailure(@NonNull @NotNull Exception e) {
+                                public void onSuccess(Void unused) {
 
-//
-
+                                    Toast.makeText(context.getApplicationContext(), "uploaded", Toast.LENGTH_SHORT).show();
+                                    Intent intent = new Intent(context.getApplicationContext(),Acceptd.class);
+                                    context.startActivity(intent);
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
 
                                 }
                             });
+//
+
+
 
                         }
 

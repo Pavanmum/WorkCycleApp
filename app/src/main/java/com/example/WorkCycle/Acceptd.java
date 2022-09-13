@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -24,6 +25,12 @@ public class Acceptd extends AppCompatActivity {
     clientdsadp clientdsadp;
     FirebaseFirestore db;
     ProgressDialog progressDialog;
+    String UserId;
+    //FirebaseUser user;
+
+    FirebaseFirestore fStore;
+    FirebaseAuth fAuth;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +39,7 @@ public class Acceptd extends AppCompatActivity {
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setCancelable(false);
-        progressDialog.setMessage("Fetching Data.....");
+        progressDialog.setMessage("Showing Details.....");
         progressDialog.show();
         recyclerView = findViewById(R.id.rc);
         recyclerView.setHasFixedSize(true);
@@ -50,7 +57,11 @@ public class Acceptd extends AppCompatActivity {
 
     private void EventChangeListener() {
 
-        db.collection("jobers").orderBy("Name", Query.Direction.ASCENDING)
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+        String userId = fAuth.getCurrentUser().getUid();
+
+        fStore.collection("user").document(userId).collection("Jobs").orderBy("Name", Query.Direction.ASCENDING)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {

@@ -33,7 +33,7 @@ public class HomeFragment extends Fragment {
 
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-        int imgarr[] = {R.drawable.facebook, R.drawable.google, R.drawable.twitter};
+        int imgarr[] = {R.drawable.imgs, R.drawable.a1, R.drawable.a2, R.drawable.a3, R.drawable.a4, R.drawable.a6};
         view = root.findViewById(R.id.viewflipper);
 
         for (int i = 0; i < imgarr.length; i++) {
@@ -51,8 +51,10 @@ public class HomeFragment extends Fragment {
         view.setFlipInterval(2000);
         view.setAutoStart(true);
 
+
         view.setInAnimation(context, android.R.anim.slide_in_left);
         view.setOutAnimation(context, android.R.anim.slide_out_right);
+
 
 
     }

@@ -27,8 +27,8 @@
         android:layout_width="323dp"
         android:layout_height="55dp"
         android:drawablePadding="20dp"
+        android:drawableLeft="@drawable/man"
         android:ems="10"
-        android:hint="Full Name"
         android:inputType="textPersonName"
         android:textColorHint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -47,6 +47,7 @@
         android:hint="Contact_Number"
         android:inputType="numberSigned"
         android:textColorHint="@color/black"
+        android:drawableLeft="@drawable/contact"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.59"
@@ -59,6 +60,7 @@
         android:layout_width="323dp"
         android:layout_height="55dp"
         android:drawablePadding="20dp"
+        android:drawableLeft="@drawable/name"
         android:ems="10"
         android:focusable="false"
         android:hint="Email"
@@ -88,14 +90,14 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
+        android:layout_width="153dp"
+        android:layout_height="137dp"
+        android:background="@drawable/acc"
         app:layout_constraintBottom_toTopOf="@+id/updateName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detail"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/detail" />
 
     <ProgressBar
         android:id="@+id/progressBar3"
@@ -105,8 +107,9 @@
         android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/buttonUpdate"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/updateContact" />
+        app:layout_constraintTop_toBottomOf="@+id/updateContact"
+        app:layout_constraintVertical_bias="0.55" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
