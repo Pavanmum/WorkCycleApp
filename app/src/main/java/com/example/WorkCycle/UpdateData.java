@@ -1,6 +1,7 @@
 package com.example.WorkCycle;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,12 +21,17 @@ public class UpdateData extends AppCompatActivity {
 
     private EditText dname, dwork, ddays, dlocation, dmoney, dperson;
     private Button dbtn;
+
     DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_data);
+
+
+
+
 
         dname = findViewById(R.id.Name);
         dwork = findViewById(R.id.Work);
@@ -34,6 +40,7 @@ public class UpdateData extends AppCompatActivity {
         dmoney = findViewById(R.id.money);
         dperson = findViewById(R.id.person);
         dbtn = findViewById(R.id.updatebtn);
+
 
         dbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,12 +53,19 @@ public class UpdateData extends AppCompatActivity {
                 String erupees = dmoney.getText().toString();
                 String elocation = dlocation.getText().toString();
 
+                if (TextUtils.isEmpty(ename)) {
+                    dname.setError("Enter a event name which you want to updated");
+                    return;
+                }
+
+
                 updatedata(ename,ework,eperson,edays,erupees,elocation);
 
             }
 
         });
     }
+
 
     private void updatedata(String ename, String ework, String eperson, String edays, String erupees, String elocation) {
 
@@ -67,6 +81,7 @@ public class UpdateData extends AppCompatActivity {
             public void onComplete(@NonNull Task task) {
 
                 if (task.isSuccessful()){
+
 
                     Toast.makeText(UpdateData.this,"Successfully Updated",Toast.LENGTH_SHORT).show();
 

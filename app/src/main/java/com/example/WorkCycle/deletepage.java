@@ -23,6 +23,7 @@ public class deletepage extends AppCompatActivity {
         binding = ActivityDeletepageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+
         binding.deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

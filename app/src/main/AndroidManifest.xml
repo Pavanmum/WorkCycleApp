@@ -29,7 +29,9 @@
             android:exported="false" />
         <activity
             android:name=".deletepage"
-            android:exported="false" />
+            android:exported="false"
+            android:parentActivityName=".UpdateData"/>
+
         <activity
             android:name=".eventviewpage"
             android:exported="false" />

@@ -122,6 +122,12 @@ public class MainActivity extends AppCompatActivity {
                     mpassword.setError("Password must be >= 8 character");
                     return;
                 }
+                if(s1.isChecked() && s2.isChecked()) {
+                    s1.setError("Please Checked only one");
+                    s2.setError("Please checked only one");
+                    Toast.makeText(getApplicationContext(), "Click Admin or Client", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 progressBar.setVisibility(View.VISIBLE);
 
@@ -131,11 +137,18 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful())
                         {
-//
-                          Toast.makeText(getApplicationContext(), "Log In Successful", Toast.LENGTH_SHORT).show();
-                            Intent i = new Intent(getApplicationContext(),Dashboard.class);
-                            startActivity(i);
-                            finish();
+                            if (s1.isChecked()) {
+                                Toast.makeText(getApplicationContext(), "Log In Successful", Toast.LENGTH_SHORT).show();
+                                Intent i = new Intent(getApplicationContext(), Adminlog.class);
+                                startActivity(i);
+                                finish();
+                            } else if (s2.isChecked()) {
+                                Toast.makeText(getApplicationContext(), "Log In Successful", Toast.LENGTH_SHORT).show();
+                                Intent i = new Intent(getApplicationContext(), clientdetails.class);
+                                startActivity(i);
+                                finish();
+                            }
+
 
                         }else
                         {
