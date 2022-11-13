@@ -30,6 +30,7 @@ public class Adminlog extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),Eventcreatepage.class));
+                finish();
             }
         });
 
@@ -37,18 +38,21 @@ public class Adminlog extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), deletepage.class));
+                finish();
             }
         });
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(),UpdateData.class));
+                finish();
             }
         });
         btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(Adminlog.this,clientdetails.class));
+                finish();
             }
         });
         t1.setOnClickListener(new View.OnClickListener() {

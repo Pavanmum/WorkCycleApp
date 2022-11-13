@@ -114,6 +114,7 @@ public class clientdata extends AppCompatActivity {
                     @Override
                     public void onFailure(@NonNull @NotNull Exception e) {
 
+                        Intent i = new Intent(clientdata.this,cilentdash.class);
                         Toast.makeText(clientdata.this,"Failed",Toast.LENGTH_SHORT).show();
 
 

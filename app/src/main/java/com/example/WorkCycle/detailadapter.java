@@ -1,5 +1,6 @@
 package com.example.WorkCycle;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
@@ -116,18 +117,21 @@ public class detailadapter extends RecyclerView.Adapter<detailadapter.MyViewhold
                             df.set(clients).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void unused) {
-
                                     Toast.makeText(context.getApplicationContext(), "uploaded", Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent(context.getApplicationContext(),Acceptd.class);
+                                    Intent intent = new Intent(context.getApplicationContext(),Adminlog.class);
+//                                    String email = emobile.getText().toString();
+                                    intent.putExtra("Email",Mail);
                                     context.startActivity(intent);
+                                    ((Activity)context).finish();
+
                                 }
+
                             }).addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
 
                                 }
                             });
-//
 
 
 

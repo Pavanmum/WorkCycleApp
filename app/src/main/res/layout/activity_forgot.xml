@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".forgot">
+    tools:context=".forgot"
+    >
 
     <ImageView
         android:id="@+id/backe"
@@ -13,9 +14,9 @@
         android:layout_centerVertical="true"
         android:layout_marginTop="4dp"
         android:padding="15dp"
-        android:src="@drawable/back"
+        android:src="@drawable/right_arrow"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.019"
+        app:layout_constraintHorizontal_bias="0.988"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,11 +38,12 @@
 
     <EditText
         android:id="@+id/txtEmail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="309dp"
+        android:layout_height="54dp"
         android:layout_marginStart="93dp"
         android:layout_marginTop="17dp"
         android:layout_marginEnd="108dp"
+        android:drawableLeft="@drawable/name"
         android:ems="10"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,12 +55,50 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="148dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="36dp"
         android:layout_marginEnd="169dp"
-        android:text="Button"
+        android:backgroundTint="@color/teal_200"
+        android:text="Submit"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
+
+    <ImageView
+        android:id="@+id/iv_circle"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginStart="-80dp"
+        android:layout_marginTop="-80dp"
+        android:src="@drawable/circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="260dp"
+        android:layout_height="260dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="-180dp"
+        android:src="@drawable/circle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginEnd="-100dp"
+        android:layout_marginBottom="-40dp"
+        android:src="@drawable/circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <ImageView
+        android:layout_width="320dp"
+        android:layout_height="320dp"
+        android:layout_marginBottom="-240dp"
+        android:src="@drawable/circle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

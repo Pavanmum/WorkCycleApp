@@ -1,5 +1,6 @@
 package com.example.WorkCycle;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -15,8 +16,7 @@ import java.util.HashMap;
 
 public class Eventcreatepage extends AppCompatActivity {
 
-    //    FirebaseDatabase firebaseDatabase;
-//    DatabaseReference databaseReference;
+
     Event eventinfo;
     private EditText dname, dwork, ddays, dlocation, dmoney, dperson;
     private Button dbtn, dbtnreset;
@@ -105,6 +105,7 @@ public class Eventcreatepage extends AppCompatActivity {
                 refrence = db.getReference("Event");
                 refrence.child(ename).setValue(event);
                 Toast.makeText(Eventcreatepage.this, "Created", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(),Adminlog.class));
             }
 
 

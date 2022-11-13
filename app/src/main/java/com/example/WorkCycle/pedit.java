@@ -90,6 +90,8 @@ public class pedit extends AppCompatActivity {
                 Intent intent = new Intent(pedit.this, GalleryFragment.class);
                 startActivity(intent);
                 progressBar.setVisibility(View.VISIBLE);
+                finish();
+
             }
 
             private void UpdateData(String name, String mob, String chEmail) {

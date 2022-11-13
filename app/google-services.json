@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "303331086713",
-    "project_id": "work-cycle-2d2e2",
-    "storage_bucket": "work-cycle-2d2e2.appspot.com"
+    "project_number": "711897070576",
+    "project_id": "application-ffd7d",
+    "storage_bucket": "application-ffd7d.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:303331086713:android:f3ff2fb4fa3ff1ee721fa8",
+        "mobilesdk_app_id": "1:711897070576:android:397dcab27751c91d083b35",
         "android_client_info": {
           "package_name": "com.example.lofginpage"
         }
       },
       "oauth_client": [
         {
-          "client_id": "303331086713-jetf1etiirihdgmommjubgmfc1jrvq9q.apps.googleusercontent.com",
+          "client_id": "711897070576-6nl1mttma7vm3nb0jgcnnp6costqo8gc.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyABoCXRo8N_B0v4LIwLFVfVII-t04xMMtk"
+          "current_key": "AIzaSyDaJppqZznIeW1ovhFcPCCP-d36JNMWd_8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "303331086713-jetf1etiirihdgmommjubgmfc1jrvq9q.apps.googleusercontent.com",
+              "client_id": "711897070576-6nl1mttma7vm3nb0jgcnnp6costqo8gc.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

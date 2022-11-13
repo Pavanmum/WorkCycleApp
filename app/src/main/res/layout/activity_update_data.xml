@@ -18,7 +18,7 @@
             android:background="#017F6C"
             android:id="@+id/toolbars"
             android:title="Update Page"
-            android:titleTextColor="@color/black"
+            android:titleTextColor="#C1F800"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

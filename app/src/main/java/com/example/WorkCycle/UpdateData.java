@@ -1,5 +1,6 @@
 package com.example.WorkCycle;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -75,6 +76,8 @@ public class UpdateData extends AppCompatActivity {
         event.put("Days", edays);
         event.put("Money", erupees);
         event.put("Location", elocation);
+
+
         databaseReference = FirebaseDatabase.getInstance().getReference("Event");
         databaseReference.child(ename).updateChildren(event).addOnCompleteListener(new OnCompleteListener() {
             @Override
@@ -88,6 +91,7 @@ public class UpdateData extends AppCompatActivity {
                 }else {
 
                     Toast.makeText(UpdateData.this,"Failed to Update",Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(),Adminlog.class));
 
                 }
 

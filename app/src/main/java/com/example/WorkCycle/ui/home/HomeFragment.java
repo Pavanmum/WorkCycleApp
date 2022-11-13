@@ -13,9 +13,9 @@ import android.widget.ViewFlipper;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.example.WorkCycle.About_page;
 import com.example.WorkCycle.Adminlog;
 import com.example.WorkCycle.R;
-import com.example.WorkCycle.SplashScreen;
 import com.example.WorkCycle.cilentdash;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -85,7 +85,7 @@ public class HomeFragment extends Fragment {
         About.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, SplashScreen.class);
+                Intent intent = new Intent(context, About_page.class);
                 startActivity(intent);
 
             }

@@ -1,7 +1,9 @@
 package com.example.WorkCycle;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -16,12 +18,23 @@ import com.google.firebase.database.FirebaseDatabase;
 public class deletepage extends AppCompatActivity {
     ActivityDeletepageBinding binding;
     DatabaseReference reference;
+    ImageView back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityDeletepageBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        back = findViewById(R.id.imageView);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),Adminlog.class);
+                startActivity(i);
+                finish();
+            }
+        });
 
 
         binding.deleteBtn.setOnClickListener(new View.OnClickListener() {

@@ -50,8 +50,7 @@ public class MainActivity extends AppCompatActivity {
         mLoginbutton = findViewById(R.id.button);
         mCreateBtn = findViewById(R.id.createtxt);
         mforget = findViewById(R.id.forget);
-        s1 = findViewById(R.id.switch2);
-        s2 = findViewById(R.id.switch3);
+
 
 
         fAuth = FirebaseAuth.getInstance();
@@ -93,9 +92,9 @@ public class MainActivity extends AppCompatActivity {
         mforget.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-              Intent i = new Intent(getApplicationContext(),forgot.class);
-              startActivity(i);
-              finish();
+                Intent i = new Intent(getApplicationContext(),forgot.class);
+                startActivity(i);
+                finish();
 
             }
         });
@@ -122,12 +121,6 @@ public class MainActivity extends AppCompatActivity {
                     mpassword.setError("Password must be >= 8 character");
                     return;
                 }
-                if(s1.isChecked() && s2.isChecked()) {
-                    s1.setError("Please Checked only one");
-                    s2.setError("Please checked only one");
-                    Toast.makeText(getApplicationContext(), "Click Admin or Client", Toast.LENGTH_SHORT).show();
-                    return;
-                }
 
                 progressBar.setVisibility(View.VISIBLE);
 
@@ -137,29 +130,21 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful())
                         {
-                            if (s1.isChecked()) {
-                                Toast.makeText(getApplicationContext(), "Log In Successful", Toast.LENGTH_SHORT).show();
-                                Intent i = new Intent(getApplicationContext(), Adminlog.class);
-                                startActivity(i);
-                                finish();
-                            } else if (s2.isChecked()) {
-                                Toast.makeText(getApplicationContext(), "Log In Successful", Toast.LENGTH_SHORT).show();
-                                Intent i = new Intent(getApplicationContext(), clientdetails.class);
-                                startActivity(i);
-                                finish();
-                            }
-
+//
+                            Toast.makeText(getApplicationContext(), "Log In Successful", Toast.LENGTH_SHORT).show();
+                            Intent i = new Intent(getApplicationContext(),Dashboard.class);
+                            startActivity(i);
+                            finish();
 
                         }else
                         {
 
                             Toast.makeText(getApplicationContext(), "Error" + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                             progressBar.setVisibility(View.GONE);
-
                         }
                     }
 
-//                    SimpleLogin(com.firebase.client.Firebase ref, android.content.Context context)
+
                 });
             }
         });
